@@ -20,6 +20,18 @@ lcd_columns, lcd_rows, lcd_backlight)
 lcd.clear()
 
 if(len(sys.argv) > 1):
-	lcd.message(sys.argv[1])
+  message = sys.argv[1]+"\n"
+  message = message.replace("{", "\n")
+  if len(sys.argv) >= 3:
+    count = int(sys.argv[2]) % 10
+    count = abs(count - 5)
+    for dummy in range(count):
+      message += " "
+    if len(sys.argv) == 3:
+      message += "."
+    else:
+      message += "*"
+  lcd.message(message)
 else:
-	lcd.message(sys.stdin.readlines()[0])
+  for line in sys.stdin.readlines():
+    lcd.message(line)
