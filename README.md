@@ -25,6 +25,13 @@ Technical details are available in this document:
 
 [Technical Information](https://github.com/bakitybacon/owlcoin/blob/master/technicaldetails.pdf)
 
+The last iteration of the software focused on instantaneous responses to errors and constant updating, as well as an asynchronous approach to LED management. It uses interprocess communication to implement asynchronicity, as when an error is found, a signal is sent to the LED handler script which triggers the LED. This is a marked contrast with earlier iterations that updated the screen once per minute, which means an error could occur and not be obvious for up to a minute. 
+
+In the future, the following changes should be made:
+* Occasionally, the device does not show the shutdown message, if the shutdown message is overwritten by the `update_display_asynch.py` script before the shutdown is complete. This can be fixed if the shutdown script kills the the script.
+* Actually, the LED handler script doesn't really need to exist. The signals can be sent directly from the bash script.
+* Deleting the Threading used in the `asynchleds.py` script, which does not need to occur. I thought I needed it, but the real issue was global/local variables in python.
+
 OwlCoin consists of the following members:
 * Lon Kai Pang
 * Charlie Benninger
