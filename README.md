@@ -14,13 +14,16 @@ In order to use this repository, it is necessary to have access to the OwlCoin m
 
 Here are a few pictures of OwlCoin in action:
 
+![In Use](https://github.com/bakitybacon/owlcoin/blob/master/owlcoininuse.jpeg)
+![Wiring](https://github.com/bakitybacon/owlcoin/blob/master/owlcoinwiring.jpeg)
+
 And, here's the video of our prototype in action:
 
 https://youtu.be/EflcxropQAA
 
 Technical details are available in this document:
 
-
+[Technical Information](https://github.com/bakitybacon/owlcoin/blob/master/technicaldetails.pdf)
 
 OwlCoin consists of the following members:
 * Lon Kai Pang
